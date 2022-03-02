@@ -26,12 +26,12 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiase;
   }
 
-  body, input, button{
+  body, input, button, textarea{
     font: 14px 'Roboto', sans-serif;
     color: white;
   }
 
-  input{
+  input,textarea{
     height: 50px;
     width: 100%;
     border-radius: 8px;

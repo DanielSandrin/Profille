@@ -34,8 +34,9 @@ export default function SideBar() {
           <Divisor />
         </Cabecalho>
         <Menu>
-          <Link to='#' onClick={verificaSideBar}>Perfil</Link>
+          <Link to="newJob" onClick={verificaSideBar} >Anunciar Vaga</Link>
           <Link to="jobs" onClick={verificaSideBar} >Trabalhos</Link>
+          <Link to='#' onClick={verificaSideBar}>Perfil</Link>
           <Link to="#" onClick={verificaSideBar}>Sobre</Link>
           <Link to="/" onClick={verificaSideBar}>Sair</Link>
         </Menu>

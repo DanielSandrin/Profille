@@ -21,6 +21,11 @@ export const SingUpForm = styled.main`
     margin-top: 15px;
   }
 
+  form{
+    width: 70%;
+    max-width: 800px;
+  }
+
   a{
     display: flex;
     align-items: center;

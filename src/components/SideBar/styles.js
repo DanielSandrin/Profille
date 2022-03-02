@@ -90,12 +90,16 @@ export const Menu = styled.div`
 
   a{
     color: white;
-    margin-left: 5%;
-    margin-top: 5%;
     padding: 4%;
     
     &:hover{
       background: #171923;
+    }
+
+    &{
+      content: '';
+      border-bottom: 1px solid #171923;
+      padding: 9px;
     }
   }
 `;
