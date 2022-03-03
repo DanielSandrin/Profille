@@ -1,21 +1,19 @@
 import styled from 'styled-components';
 
-export const Container = styled.aside`
+export const Container = styled.div`
   display:flex;
-  height: 100%;
-
+  justify-content: stretch;
 
   nav{
     display:none;
   }
 
-  @media(max-width:685px){
+  @media screen and (max-width:976px){
     nav{
-      display: none;
-      margin-right: 180px;
+      display:flex;
+      margin-right: 32px;
       background:#1A202C;
       height: 100vh;
-      width: 5%;
     }
   }
 `;
@@ -23,7 +21,7 @@ export const Container = styled.aside`
 export const ButtonLateral = styled.div`
   display:none;
 
-  @media(max-width:685px){
+  @media screen and (max-width:976px){
     display:flex;
     justify-content: end;
     cursor:pointer;
@@ -39,16 +37,16 @@ export const ContainerMenu = styled.div`
   height: 100vh;
   background: #1A202C;
 
-  @media(max-width: 685px){
+  @media screen and (max-width: 976px){
     position: fixed;
     height: 100%;
     left: ${props => props.sidebar ? '0' : '-100%'};
     transition: 0.5s;
+    width: 60%;
   }
 `;
 
 export const OutletContainer = styled.main`
-  width: 1000px;
   margin-top: 32px; 
 `;
 
@@ -67,7 +65,7 @@ export const Divisor = styled.div`
 
   background-color: #171923;
   padding-top: 2%;
-  width: 18vw;
+  width: 100%;
   margin-top: 3%;
   border-radius: 8%;
 `;
@@ -81,7 +79,7 @@ export const Avatar = styled.img`
 
 export const Text = styled.span`
   font-size: 1.4rem;
-  margin-top: 8%;
+  margin-top: 8%; 
 `;
 
 export const Menu = styled.div`
@@ -91,6 +89,7 @@ export const Menu = styled.div`
   a{
     color: white;
     padding: 4%;
+    font-size: 0.9  rem;
     
     &:hover{
       background: #171923;

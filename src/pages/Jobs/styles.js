@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  flex:1; 
+  display: flex;
+  width: 72vw;
 `;
 
 export const Table = styled.table`
-
-  width: 100%;
+  width: 70vw;
   border-collapse: separate;
   border-spacing: 0 8px;
   margin-top: -8px;
@@ -53,17 +53,35 @@ export const Table = styled.table`
   }
 
   @media(max-width:697px){
-    tbody td:last-child,td:nth-child(1), thead th:last-child, th:nth-child(1){
+    tbody td:last-child, thead th:last-child{
       display: none;
     }
 
-    thead th, tbody td{
-      font-size: 28px;
+  tbody td:nth-child(2){
+    border-bottom-right-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+
+  thead th:nth-child(2){
+    border-bottom-right-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+
+  @media(max-width: 392px){
+    tbody td:nth-child(2), thead th:nth-child(2){
+      display: none;
     }
 
-    table{
-      width: 30%;
-    }
+  tbody td:nth-child(1){
+    border-bottom-right-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+
+  thead th:nth-child(1){
+    border-bottom-right-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+  }
 
   }
 `;

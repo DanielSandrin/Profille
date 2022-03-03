@@ -45,7 +45,9 @@ function NewJob() {
               <Field as='textarea' lines={4} name="email" values='' placeholder="Descrição"></Field>
               <ErrorMessage component='span' name='email' />
             </Content>
-            <button type="submit">Salvar</button>
+            <div>
+              <button type="submit">Salvar</button>
+            </div>
           </Form>
         )}>
       </Formik>
