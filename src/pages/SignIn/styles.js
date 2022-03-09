@@ -12,7 +12,13 @@ export const SingUpForm = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content:center;
-  width: 50vw;
+
+  width: 40vw;
+  height: 70vh;
+  margin-right: 5%;
+  background: #1A202C;
+  border-radius: 5px;
+  box-shadow: 0 0 1em black;
 
   button{
     background: green;
@@ -38,20 +44,21 @@ export const SingUpForm = styled.main`
     text-decoration: underline;
   }
 
-  @media(max-width: 778px){
-    width: 100%;
-    margin: 32px 0px;
+  @media(max-width: 916px){
+    width: 60%;
+    margin: 32px auto;
 
     form{
-      width: 50%;
+      width: 80%;
     }
   }
 
-  @media(max-width: 380px){
-    width: 100%;
+  @media(max-width: 547px){
+    width: 80%;
+    margin:32px auto;
 
     form{
-      width: 100%;
+      width: 90%;
     }
   }
 `;
@@ -73,17 +80,14 @@ export const Aside = styled.aside`
   flex-direction: column;
   
   height: 100vh;
-  background: #202126;
 
   img{
-    max-width: 100%;
+    margin-top: 10%;
+    max-width: 80%;
   }
 
-  @media(max-width: 908px){
-    width: 80vh;
+  @media(max-width: 916px){
+    display: none;
   }
 
-  @media(max-width: 778px){
-    display:none;
-  }
 `;

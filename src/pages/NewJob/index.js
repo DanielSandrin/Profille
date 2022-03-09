@@ -6,30 +6,27 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Container, Content, FormHeader } from './styles';
 
 const SchemaSignUp = Yup.object().shape({
-  nome: Yup.string().required('Informe o nome'),
-  email: Yup.string().email('e-mail inválido').required('informe o e-mail'),
-  senha: Yup.string().min(8, 'A senha deve conter no minímo 8 caracteres')
-    .required('Informe a senha')
+  titulo: Yup.string().required('Informe o título da vaga'),
+  valor: Yup.string().required('Informe a remuneração'),
+  descricao: Yup.string().min(16, 'A descrição deve conter no mínimo 16 caracteres')
+    .required('Informe a descricao')
 })
 
 
 const ValoresIniciais = {
-  nome: '',
-  email: '',
-  senha: ''
+  titulo: '',
+  valor: '',
+  descricao: ''
 }
-
-
-
 function NewJob() {
-  const Navigate = useNavigate();
-  
+
   function handleSubmit(values, actions) {
-    const cadastros = JSON.parse(localStorage.getItem('Profille')) ?? []
-    cadastros.push(values)
-    localStorage.setItem('Profille', JSON.stringify(cadastros));
-    Navigate('/');
+    const trabalhos = JSON.parse(localStorage.getItem('MeusTrabalhos')) ?? []
+    trabalhos.push(values)
+    localStorage.setItem('MeusTrabalhos', JSON.stringify(trabalhos));
+    actions.resetForm({ values: '' });
   }
+
   return (
     <Container>
       <Formik onSubmit={handleSubmit} initialValues={ValoresIniciais} validationSchema={SchemaSignUp}
@@ -37,13 +34,13 @@ function NewJob() {
           <Form>
             <Content>
               <FormHeader>
-                <Field type="text" name='nome' values='' placeholder='Título'></Field>
-                <ErrorMessage component='span' name='nome' />
-                <Field type="password" name="senha" values='' placeholder="R$ 100,00"></Field>
-                <ErrorMessage component='span' name='senha' />
+                <Field type="text" name='titulo' values='' placeholder='Título'></Field>
+                <ErrorMessage component='span' name='titulo' />
+                <Field type="text" name="valor" values='' placeholder="R$ 100,00"></Field>
+                <ErrorMessage component='span' name='valor' />
               </FormHeader>
-              <Field as='textarea' lines={4} name="email" values='' placeholder="Descrição"></Field>
-              <ErrorMessage component='span' name='email' />
+              <Field as='textarea' lines={4} name="descricao" values='' placeholder="Descrição"></Field>
+              <ErrorMessage component='span' name='descricao' />
             </Content>
             <div>
               <button type="submit">Salvar</button>

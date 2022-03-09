@@ -1,9 +1,16 @@
-import React from 'react';
+import {React, useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 
 import { Container, Table } from './styles';
 
 export default function Jobs() {
+  const [trabalhos, setTrabalhos] = useState([])
+
+  useEffect(() => {
+    const MeusTrabalhos = JSON.parse(localStorage.getItem('MeusTrabalhos'));
+    setTrabalhos(MeusTrabalhos);
+  },[])
+
   return (
     <Container>
       <Table>
@@ -15,16 +22,15 @@ export default function Jobs() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Desenvolvimento de APP</td>
-            <td><Link to="/">APP</Link></td>
-            <td>R$ 1000,00</td>
-          </tr>
-          <tr>
-            <td>Desenvolvimento de APP</td>
-            <td>teste de desenvolvimento de app bla bl</td>
-            <td>R$ 1000,00</td>
-          </tr>
+          {trabalhos.map(trabalhos =>{
+            return(
+              <tr>
+                <td>{trabalhos.titulo}</td>
+                <td><Link to="/">{trabalhos.descricao}</Link></td>
+                <td>{trabalhos.valor}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </Table>
     </Container>);

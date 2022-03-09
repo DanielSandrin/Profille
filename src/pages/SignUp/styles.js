@@ -11,7 +11,12 @@ export const SingUpForm = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content:center;
-  width: 50vw;
+
+  width: 40vw;
+  height: 70vh;
+  background: #1A202C;
+  border-radius: 5px;
+  box-shadow: 0 0 1em black;
 
   button{
     background: green;
@@ -23,7 +28,6 @@ export const SingUpForm = styled.main`
 
   form{
     width: 70%;
-    max-width: 800px;
   }
 
   a{
@@ -54,10 +58,9 @@ export const Aside = styled.aside`
   flex-direction: column;
   
   height: 100vh;
-  background: #202126;
 
   img{
-    margin: 32px 32px;
-    max-width: 650px;
+    margin-top: 10%;
+    max-width: 80%;
   }
 `;

@@ -70,17 +70,18 @@ export const Table = styled.table`
   @media(max-width: 392px){
     tbody td:nth-child(2), thead th:nth-child(2){
       display: none;
+      align-items: baseline;
     }
 
-  tbody td:nth-child(1){
-    border-bottom-right-radius: 9px;
-    border-top-right-radius: 9px;
-  }
+    tbody td:nth-child(1){
+      border-bottom-right-radius: 9px;
+      border-top-right-radius: 9px;
+    }
 
-  thead th:nth-child(1){
-    border-bottom-right-radius: 9px;
-    border-top-right-radius: 9px;
-  }
+    thead th:nth-child(1){
+      border-bottom-right-radius: 9px;
+      border-top-right-radius: 9px;
+    }
   }
 
   }
